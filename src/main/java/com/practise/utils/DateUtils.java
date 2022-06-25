@@ -46,4 +46,44 @@ public class DateUtils {
     public LocalDate convertToLocalDate(Date date) {
         return date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
     }
+
+    /**
+     *
+     * @param dateTime date time
+     * @return day of the month for a given date time
+     */
+    public int getDayOfTheMonth(LocalDateTime dateTime){
+
+        if(null != dateTime)
+            return dateTime.getDayOfMonth();
+        return 0;
+    }
+
+    /**
+     *
+     * @param dateTime date time
+     * @return month for a given date time
+     */
+    public int getMonthValue(LocalDateTime dateTime){
+        return dateTime.getMonthValue();
+    }
+
+    /**
+     *
+     * @param dateTime date time
+     * @return year value for a given date time
+     */
+    public int getYearValue(LocalDateTime dateTime){
+        return dateTime.getYear();
+    }
+
+    /**
+     *
+     * @param dateTime date time
+     * @return day of week starting from 1..7
+     */
+    public int getDayOfWeek(LocalDateTime dateTime){
+        return dateTime.getDayOfWeek().getValue();
+    }
+
 }
